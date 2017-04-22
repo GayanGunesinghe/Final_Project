@@ -28,7 +28,8 @@
                     ]);
 
                     var options = {
-                        title: 'Percentage Amount Allocated to each Department by a Budget'
+                        title: 'Percentage Amount Allocated to each Department by a Budget',
+                        pieHole: 0.4
                     };
 
                     var chart = new google.visualization.PieChart(document.getElementById('piechart'));

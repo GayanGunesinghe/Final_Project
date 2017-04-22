@@ -18,12 +18,12 @@
       <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/finance_administration/dashboard/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="20" column="109" lean-forward="false" selection-start-line="20" selection-start-column="109" selection-end-line="20" selection-end-column="109" />
+            <state relative-caret-position="610">
+              <caret line="30" column="92" lean-forward="false" selection-start-line="30" selection-start-column="92" selection-end-line="30" selection-end-column="92" />
               <folding>
-                <marker date="1492886948933" expanded="true" signature="998:1137" ph="SELECT sub_b... fa_sub_budget" />
-                <marker date="1492886948933" expanded="true" signature="1221:1287" ph="SELECT budge... fa_budget" />
-                <marker date="1492886948933" expanded="true" signature="3862:3933" ph="SELECT budge... fa_budget" />
+                <marker date="1492887506582" expanded="true" signature="998:1137" ph="SELECT sub_b... fa_sub_budget" />
+                <marker date="1492887506582" expanded="true" signature="1221:1287" ph="SELECT budge... fa_budget" />
+                <marker date="1492887506582" expanded="true" signature="3900:3971" ph="SELECT budge... fa_budget" />
               </folding>
             </state>
           </provider>
@@ -273,7 +273,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32175000" />
+    <option name="totallyTimeSpent" value="32737000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1932" height="1050" extended-state="0" />
@@ -539,12 +539,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/finance_administration/dashboard/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="20" column="109" lean-forward="false" selection-start-line="20" selection-start-column="109" selection-end-line="20" selection-end-column="109" />
+        <state relative-caret-position="610">
+          <caret line="30" column="92" lean-forward="false" selection-start-line="30" selection-start-column="92" selection-end-line="30" selection-end-column="92" />
           <folding>
-            <marker date="1492886948933" expanded="true" signature="998:1137" ph="SELECT sub_b... fa_sub_budget" />
-            <marker date="1492886948933" expanded="true" signature="1221:1287" ph="SELECT budge... fa_budget" />
-            <marker date="1492886948933" expanded="true" signature="3862:3933" ph="SELECT budge... fa_budget" />
+            <marker date="1492887506582" expanded="true" signature="998:1137" ph="SELECT sub_b... fa_sub_budget" />
+            <marker date="1492887506582" expanded="true" signature="1221:1287" ph="SELECT budge... fa_budget" />
+            <marker date="1492887506582" expanded="true" signature="3900:3971" ph="SELECT budge... fa_budget" />
           </folding>
         </state>
       </provider>

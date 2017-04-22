@@ -18,6 +18,8 @@
                         ['Department', 'Sub Budget Amount'],
                         <?php
                             $query = mysqli_query($conn, ("SELECT sub_budget_department, SUM(sub_budget_amount) as total_amount FROM fa_sub_budget WHERE budget_id = 51 GROUP BY sub_budget_department"));
+                            $query2 = mysqli_fetch_array(mysqli_query($conn, ("SELECT budget_amount_remaining FROM fa_budget WHERE budget_id = 51")));
+                            $unallocated = $query2['budget_amount_remaining'];
                             while($result = mysqli_fetch_array($query)){
                                 echo "['".$result["sub_budget_department"]."',".$result["total_amount"]."],";
                             }

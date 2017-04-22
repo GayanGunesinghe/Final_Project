@@ -35,7 +35,7 @@
                     $_SESSION['message_create'] = "ERROR: Amount should be Numeric";
                 }
                 else {
-                    $save = mysqli_query($conn, ("INSERT INTO fa_budget (account_id,budget_start_date,budget_end_date,budget_amount) VALUES('$account_id','$start_date','$end_date','$amount')"));
+                    $save = mysqli_query($conn, ("INSERT INTO fa_budget (account_id,budget_start_date,budget_end_date,budget_amount, budget_amount_remaining) VALUES('$account_id','$start_date','$end_date','$amount','$amount')"));
                     if ($save) {
                         $_SESSION['message_create'] = "Created";
                         header("location:budget.php");
@@ -71,7 +71,14 @@
                     $_SESSION['message_create'] = "ERROR: Amount should be Numeric";
                 }
                 else {
-                    $saveup = mysqli_query($conn, ("UPDATE fa_budget SET account_id='$account_id', budget_start_date='$start_date', budget_end_date='$end_date', budget_amount='$amount' WHERE budget_id='$id'"));
+                    $query=mysqli_fetch_array(mysqli_query($conn, ("SELECT budget_amount_remaining, budget_amount FROM fa_budget WHERE budget_id ='$id'")));
+                    $bud_amt = $query['budget_amount'];
+                    $bud_amt_rem = $query['budget_amount_remaining'];
+                    $up_bud_amt = $query['sub_budget_amount'];
+                    $up_bud_amt = $amount - $bud_amt;
+                    $up_bud_amt_rem = $bud_amt_rem + $up_bud_amt;
+
+                    $saveup = mysqli_query($conn, ("UPDATE fa_budget SET account_id='$account_id', budget_start_date='$start_date', budget_end_date='$end_date', budget_amount='$amount', budget_amount_remaining='$up_bud_amt_rem' WHERE budget_id='$id'"));
                     if ($saveup) {
                         header("location:budget.php");
                     } else {
@@ -184,6 +191,7 @@
                                     <th width='150'>Start Date</th>
                                     <th width='150'>End Date</th>
                                     <th width='150'>Amount</th>
+                                    <th width='150'>Amount Remaining</th>
                                     <th width="250">Action</th>
                                 </tr>
                                 <?php
@@ -194,6 +202,7 @@
                                     echo "<td>".$row['budget_start_date']."</td>";
                                     echo "<td>".$row['budget_end_date']."</td>";
                                     echo "<td>".$row['budget_amount']."</td>";
+                                    echo "<td>".$row['budget_amount_remaining']."</td>";
                                     echo "<td>";
                                     echo "<a class='button' id='table_button_delete' href='budget.php?epr=delete&id=".$row['budget_id']."'><span>Delete</span></a>";
                                     echo "<a class='button' id='table_button_update' href='budget.php?epr=update&id=".$row['budget_id']."'><span>Update</span></a>";

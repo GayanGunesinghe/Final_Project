@@ -35,14 +35,14 @@
                     $_SESSION['message_create'] = "ERROR: Amount should be Numeric";
                 }
                 else {
-                    $query=mysqli_fetch_array(mysqli_query($conn, ("SELECT budget_amount FROM fa_budget WHERE budget_id ='$sub_budget_budget_id'")));
-                    $bud_amt = $query['budget_amount'];
+                    $query=mysqli_fetch_array(mysqli_query($conn, ("SELECT budget_amount_remaining FROM fa_budget WHERE budget_id ='$sub_budget_budget_id'")));
+                    $bud_amt = $query['budget_amount_remaining'];
                     $up_bud_amt=$bud_amt - $sub_budget_amount;
                     if($up_bud_amt<0){
                         $_SESSION['message_create'] = "ERROR: Exceed Main Budget Amount";
                     }
                     else {
-                        mysqli_query($conn, ("UPDATE fa_budget SET budget_amount='$up_bud_amt' WHERE budget_id='$sub_budget_budget_id';"));
+                        mysqli_query($conn, ("UPDATE fa_budget SET budget_amount_remaining='$up_bud_amt' WHERE budget_id='$sub_budget_budget_id'"));
                         $save = mysqli_query($conn, ("INSERT INTO fa_sub_budget (budget_id,sub_budget_department,sub_budget_amount,sub_budget_description) VALUES('$sub_budget_budget_id','$sub_budget_department','$sub_budget_amount','$sub_budget_description')"));
                         if ($save) {
                             header( "Refresh:3; url=http://localhost/Final_Project/finance_administration/budgetting/sub_budget/sub_budget.php", true, 303);
@@ -63,14 +63,14 @@
                     $query=mysqli_fetch_array(mysqli_query($conn, ("SELECT sub_budget_amount, budget_id FROM fa_sub_budget WHERE sub_budget_id ='$id'")));
                     $sub_bud_amt = $query['sub_budget_amount'];
                     $budget_id = $query['budget_id'];
-                    $query2=mysqli_fetch_array(mysqli_query($conn, ("SELECT budget_amount FROM fa_budget WHERE budget_id ='$budget_id'")));
-                    $bud_amt = $query2['budget_amount'];
+                    $query2=mysqli_fetch_array(mysqli_query($conn, ("SELECT budget_amount_remaining FROM fa_budget WHERE budget_id ='$budget_id'")));
+                    $bud_amt = $query2['budget_amount_remaining'];
                     $up_bud_amt=$bud_amt + $sub_bud_amt;
                     if($up_bud_amt<0){
                         $_SESSION['message_create'] = "ERROR";
                     }
                     else {
-                        mysqli_query($conn, ("UPDATE fa_budget SET budget_amount='$up_bud_amt' WHERE budget_id='$budget_id';"));
+                        mysqli_query($conn, ("UPDATE fa_budget SET budget_amount_remaining='$up_bud_amt' WHERE budget_id='$budget_id';"));
                         $delete = mysqli_query($conn, ("DELETE FROM fa_sub_budget WHERE sub_budget_id = '$id'"));
                         if ($delete) {
                             header( "Refresh:3; url=http://localhost/Final_Project/finance_administration/budgetting/sub_budget/sub_budget.php", true, 303);
@@ -94,17 +94,17 @@
                     $_SESSION['message_create'] = "ERROR: Amount should be Numeric";
                 }
                 else {
-                    $query=mysqli_fetch_array(mysqli_query($conn, ("SELECT budget_amount FROM fa_budget WHERE budget_id ='$sub_budget_budget_id'")));
-                    $bud_amt = $query['budget_amount'];
+                    $query=mysqli_fetch_array(mysqli_query($conn, ("SELECT budget_amount_remaining FROM fa_budget WHERE budget_id ='$sub_budget_budget_id'")));
+                    $bud_amt = $query['budget_amount_remaining'];
                     $query2=mysqli_fetch_array(mysqli_query($conn, ("SELECT sub_budget_amount FROM fa_sub_budget WHERE sub_budget_id ='$id'")));
                     $sub_bud_amt = $query2['sub_budget_amount'];
                     $up_sub_bud_amt = $sub_bud_amt - $sub_budget_amount;
-                    $up_bud_amt=$bud_amt + $up_sub_bud_amt;
+                    $up_bud_amt = $bud_amt + $up_sub_bud_amt;
                     if($up_bud_amt<0){
                         $_SESSION['message_create'] = "ERROR: Exceed Main Budget Amount";
                     }
                     else {
-                        mysqli_query($conn, ("UPDATE fa_budget SET budget_amount='$up_bud_amt' WHERE budget_id='$sub_budget_budget_id';"));
+                        mysqli_query($conn, ("UPDATE fa_budget SET budget_amount_remaining='$up_bud_amt' WHERE budget_id='$sub_budget_budget_id';"));
                         $saveup = mysqli_query($conn, ("UPDATE fa_sub_budget SET budget_id='$sub_budget_budget_id', sub_budget_department='$sub_budget_department', sub_budget_amount='$sub_budget_amount', sub_budget_description='$sub_budget_description' WHERE sub_budget_id='$id'"));
                         if ($saveup) {
                             header("location:sub_budget.php");

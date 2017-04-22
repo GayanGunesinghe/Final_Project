@@ -18,11 +18,38 @@
       <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/finance_administration/dashboard/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="202" />
+            <state relative-caret-position="390">
+              <caret line="20" column="109" lean-forward="false" selection-start-line="20" selection-start-column="109" selection-end-line="20" selection-end-column="109" />
               <folding>
-                <marker date="1492881202300" expanded="true" signature="998:1137" ph="SELECT sub_b... fa_sub_budget" />
-                <marker date="1492881202300" expanded="true" signature="3563:3634" ph="SELECT budge... fa_budget" />
+                <marker date="1492886948933" expanded="true" signature="998:1137" ph="SELECT sub_b... fa_sub_budget" />
+                <marker date="1492886948933" expanded="true" signature="1221:1287" ph="SELECT budge... fa_budget" />
+                <marker date="1492886948933" expanded="true" signature="3862:3933" ph="SELECT budge... fa_budget" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sub_budget.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finance_administration/budgetting/sub_budget/sub_budget.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="101" column="34" lean-forward="false" selection-start-line="101" selection-start-column="34" selection-end-line="101" selection-end-column="34" />
+              <folding>
+                <marker date="1492886384424" expanded="true" signature="507:534" ph="SELECT * FRO... fa_sub_budget" />
+                <marker date="1492886384424" expanded="true" signature="618:687" ph="SELECT * FRO... fa_sub_budget" />
+                <marker date="1492886384424" expanded="true" signature="772:799" ph="SELECT * FRO... fa_sub_budget" />
+                <marker date="1492886384424" expanded="true" signature="1695:1781" ph="SELECT budge... fa_budget" />
+                <marker date="1492886384424" expanded="true" signature="2140:2238" ph="UPDATE fa_bu... " />
+                <marker date="1492886384424" expanded="true" signature="2297:2501" ph="INSERT INTO fa_sub_budget... " />
+                <marker date="1492886384424" expanded="true" signature="3566:3647" ph="SELECT sub_b... fa_sub_budget" />
+                <marker date="1492886384424" expanded="true" signature="3840:3915" ph="SELECT budge... fa_budget" />
+                <marker date="1492886384424" expanded="true" signature="4242:4329" ph="UPDATE fa_bu... " />
+                <marker date="1492886384424" expanded="true" signature="4391:4444" ph="DELETE FROM " />
+                <marker date="1492886384424" expanded="true" signature="5726:5812" ph="SELECT budge... fa_budget" />
+                <marker date="1492886384424" expanded="true" signature="5953:6023" ph="SELECT sub_b... fa_sub_budget" />
+                <marker date="1492886384424" expanded="true" signature="6453:6551" ph="UPDATE fa_bu... " />
+                <marker date="1492886384424" expanded="true" signature="6613:6835" ph="UPDATE fa_su... " />
+                <marker date="1492886384424" expanded="true" signature="9642:9697" ph="SELECT * FRO... fa_sub_budget" />
               </folding>
             </state>
           </provider>
@@ -38,9 +65,9 @@
       <list>
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/finance_administration/account/account.php" />
-        <option value="$PROJECT_DIR$/finance_administration/budgetting/budget/budget.php" />
-        <option value="$PROJECT_DIR$/finance_administration/budgetting/sub_budget/sub_budget.php" />
         <option value="$PROJECT_DIR$/finance_administration/transaction/transaction.php" />
+        <option value="$PROJECT_DIR$/finance_administration/budgetting/sub_budget/sub_budget.php" />
+        <option value="$PROJECT_DIR$/finance_administration/budgetting/budget/budget.php" />
         <option value="$PROJECT_DIR$/finance_administration/dashboard/dashboard.php" />
       </list>
     </option>
@@ -158,6 +185,10 @@
               <option name="myItemId" value="budgetting" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="budget" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -242,7 +273,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27737000" />
+    <option name="totallyTimeSpent" value="32175000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1932" height="1050" extended-state="0" />
@@ -441,14 +472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finance_administration/budgetting/budget/budget.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="5" column="53" lean-forward="false" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/finance_administration/account/account.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2002">
@@ -473,37 +496,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/finance_administration/budgetting/budget/budget.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="80" column="226" lean-forward="false" selection-start-line="80" selection-start-column="226" selection-end-line="80" selection-end-column="226" />
+          <folding>
+            <marker date="1492886548528" expanded="true" signature="487:510" ph="SELECT * FRO... fa_budget" />
+            <marker date="1492886548528" expanded="true" signature="594:651" ph="SELECT * FRO... fa_budget" />
+            <marker date="1492886548528" expanded="true" signature="736:759" ph="SELECT * FRO... fa_budget" />
+            <marker date="1492886548528" expanded="true" signature="1521:1696" ph="INSERT INTO fa_budget... " />
+            <marker date="1492886548528" expanded="true" signature="2150:2195" ph="DELETE FROM " />
+            <marker date="1492886548528" expanded="true" signature="3325:3408" ph="SELECT budge... fa_budget" />
+            <marker date="1492886548528" expanded="true" signature="3776:3973" ph="UPDATE fa_bu... " />
+            <marker date="1492886548528" expanded="true" signature="6734:6781" ph="SELECT * FRO... fa_budget" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/finance_administration/budgetting/sub_budget/sub_budget.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2596">
-          <caret line="157" column="34" lean-forward="true" selection-start-line="157" selection-start-column="34" selection-end-line="157" selection-end-column="34" />
+        <state relative-caret-position="506">
+          <caret line="101" column="34" lean-forward="false" selection-start-line="101" selection-start-column="34" selection-end-line="101" selection-end-column="34" />
           <folding>
-            <marker date="1492877297495" expanded="true" signature="507:534" ph="SELECT * FRO... fa_sub_budget" />
-            <marker date="1492877297495" expanded="true" signature="618:687" ph="SELECT * FRO... fa_sub_budget" />
-            <marker date="1492877297495" expanded="true" signature="772:799" ph="SELECT * FRO... fa_sub_budget" />
-            <marker date="1492877297495" expanded="true" signature="1695:1771" ph="SELECT budge... fa_budget" />
-            <marker date="1492877297495" expanded="true" signature="2120:2208" ph="UPDATE fa_bu... " />
-            <marker date="1492877297495" expanded="true" signature="2268:2472" ph="INSERT INTO fa_sub_budget... " />
-            <marker date="1492877297495" expanded="true" signature="3537:3618" ph="SELECT sub_b... fa_sub_budget" />
-            <marker date="1492877297495" expanded="true" signature="3811:3876" ph="SELECT budge... fa_budget" />
-            <marker date="1492877297495" expanded="true" signature="4193:4270" ph="UPDATE fa_bu... " />
-            <marker date="1492877297495" expanded="true" signature="4332:4385" ph="DELETE FROM " />
-            <marker date="1492877297495" expanded="true" signature="5667:5743" ph="SELECT budge... fa_budget" />
-            <marker date="1492877297495" expanded="true" signature="5874:5944" ph="SELECT sub_b... fa_sub_budget" />
-            <marker date="1492877297495" expanded="true" signature="6372:6460" ph="UPDATE fa_bu... " />
-            <marker date="1492877297495" expanded="true" signature="6522:6744" ph="UPDATE fa_su... " />
-            <marker date="1492877297495" expanded="true" signature="9551:9606" ph="SELECT * FRO... fa_sub_budget" />
+            <marker date="1492886384424" expanded="true" signature="507:534" ph="SELECT * FRO... fa_sub_budget" />
+            <marker date="1492886384424" expanded="true" signature="618:687" ph="SELECT * FRO... fa_sub_budget" />
+            <marker date="1492886384424" expanded="true" signature="772:799" ph="SELECT * FRO... fa_sub_budget" />
+            <marker date="1492886384424" expanded="true" signature="1695:1781" ph="SELECT budge... fa_budget" />
+            <marker date="1492886384424" expanded="true" signature="2140:2238" ph="UPDATE fa_bu... " />
+            <marker date="1492886384424" expanded="true" signature="2297:2501" ph="INSERT INTO fa_sub_budget... " />
+            <marker date="1492886384424" expanded="true" signature="3566:3647" ph="SELECT sub_b... fa_sub_budget" />
+            <marker date="1492886384424" expanded="true" signature="3840:3915" ph="SELECT budge... fa_budget" />
+            <marker date="1492886384424" expanded="true" signature="4242:4329" ph="UPDATE fa_bu... " />
+            <marker date="1492886384424" expanded="true" signature="4391:4444" ph="DELETE FROM " />
+            <marker date="1492886384424" expanded="true" signature="5726:5812" ph="SELECT budge... fa_budget" />
+            <marker date="1492886384424" expanded="true" signature="5953:6023" ph="SELECT sub_b... fa_sub_budget" />
+            <marker date="1492886384424" expanded="true" signature="6453:6551" ph="UPDATE fa_bu... " />
+            <marker date="1492886384424" expanded="true" signature="6613:6835" ph="UPDATE fa_su... " />
+            <marker date="1492886384424" expanded="true" signature="9642:9697" ph="SELECT * FRO... fa_sub_budget" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/finance_administration/dashboard/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="202" />
+        <state relative-caret-position="390">
+          <caret line="20" column="109" lean-forward="false" selection-start-line="20" selection-start-column="109" selection-end-line="20" selection-end-column="109" />
           <folding>
-            <marker date="1492881202300" expanded="true" signature="998:1137" ph="SELECT sub_b... fa_sub_budget" />
-            <marker date="1492881202300" expanded="true" signature="3563:3634" ph="SELECT budge... fa_budget" />
+            <marker date="1492886948933" expanded="true" signature="998:1137" ph="SELECT sub_b... fa_sub_budget" />
+            <marker date="1492886948933" expanded="true" signature="1221:1287" ph="SELECT budge... fa_budget" />
+            <marker date="1492886948933" expanded="true" signature="3862:3933" ph="SELECT budge... fa_budget" />
           </folding>
         </state>
       </provider>

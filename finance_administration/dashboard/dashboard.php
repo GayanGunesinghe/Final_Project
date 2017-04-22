@@ -1,3 +1,6 @@
+    <?php
+        $conn = new mysqli('localhost', 'root', 'toor', 'final_project');
+    ?>
     <html>
         <head>
             <meta charset="UTF-8">
@@ -12,16 +15,17 @@
                 function drawChart() {
 
                     var data = google.visualization.arrayToDataTable([
-                        ['Task', 'Hours per Day'],
-                        ['Work',     11],
-                        ['Eat',      2],
-                        ['Commute',  2],
-                        ['Watch TV', 2],
-                        ['Sleep',    7]
+                        ['Department', 'Sub Budget Amount'],
+                        <?php
+                            $query = mysqli_query($conn, ("SELECT sub_budget_department, SUM(sub_budget_amount) as total_amount FROM fa_sub_budget WHERE budget_id = 48 GROUP BY sub_budget_department"));
+                            while($result = mysqli_fetch_array($query)){
+                                echo "['".$result["sub_budget_department"]."',".$result["total_amount"]."],";
+                            }
+                        ?>
                     ]);
 
                     var options = {
-                        title: 'My Daily Activities'
+                        title: 'Percentage Amount Allocated to each Department by a Budget'
                     };
 
                     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -55,7 +59,6 @@
 
         		<div id="box">
                         <?php
-                            $conn = new mysqli('localhost', 'root', 'toor', 'final_project');
                             $query = mysqli_query($conn, ("SELECT budget_amount, budget_start_date, budget_end_date FROM fa_budget"));
                             $count = 0;
                             while($result=mysqli_fetch_array($query)){

@@ -10,9 +10,10 @@
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
             <script type="text/javascript">
                 google.charts.load('current', {'packages':['corechart']});
-                google.charts.setOnLoadCallback(drawChart);
+                google.charts.setOnLoadCallback(drawChartPie);
+                google.charts.setOnLoadCallback(drawChartLine);
 
-                function drawChart() {
+                function drawChartPie() {
 
                     var data = google.visualization.arrayToDataTable([
                         ['Department', 'Sub Budget Amount'],
@@ -29,10 +30,34 @@
 
                     var options = {
                         title: 'Percentage Amount Allocated to each Department by a Budget',
+                        fontName: 'Coda',
                         pieHole: 0.4
                     };
 
                     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                    chart.draw(data, options);
+                }
+
+                function drawChartLine() {
+
+                    var data = google.visualization.arrayToDataTable([
+                        ['Budget Duration', 'Budget Amount'],
+                        <?php
+                        $query = mysqli_query($conn, ("SELECT budget_amount, budget_start_date, budget_end_date FROM fa_budget"));
+                        while($result = mysqli_fetch_array($query)){
+                            echo "['".$result["budget_start_date"]." to ".$result["budget_end_date"]."',".$result["budget_amount"]."],";
+                        }
+                        ?>
+                    ]);
+
+                    var options = {
+                        title: 'Amount allocated to each budget',
+                        fontName: 'Coda',
+                        curveType: 'function'
+                    };
+
+                    var chart = new google.visualization.LineChart(document.getElementById('linechart'));
 
                     chart.draw(data, options);
                 }
@@ -79,10 +104,11 @@
                 </div>
         			
         		<div id="box">
-                        <div class="box-top">Latest Updates</div>
+                        <div class="box-top">Summary</div>
                         <div class="box-panel">
-                        Latest updates will be posted here.</br>
-                            <div id="piechart" style="width: 900px; height: 500px;"></div>
+                        Summarised details will be shown here.</br>
+                            <div id="piechart" style="width: 700px; height: 400px; display: inline-block;"></div>
+                            <div id="linechart" style="width: 700px; height: 400px; display: inline-block;"></div>
                         </div>
         		</div>
                 </div>

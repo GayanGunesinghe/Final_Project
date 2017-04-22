@@ -1,0 +1,49 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 12/02/2017 16:02
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-budget-management:before { content: "\f100"; }
+.flaticon-download-business-statistics-symbol-of-a-graphic:before { content: "\f101"; }
+.flaticon-money-bags:before { content: "\f102"; }
+.flaticon-search:before { content: "\f103"; }
+.flaticon-sent-mail:before { content: "\f104"; }
+    
+    $font-Flaticon-budget-management: "\f100";
+    $font-Flaticon-download-business-statistics-symbol-of-a-graphic: "\f101";
+    $font-Flaticon-money-bags: "\f102";
+    $font-Flaticon-search: "\f103";
+    $font-Flaticon-sent-mail: "\f104";

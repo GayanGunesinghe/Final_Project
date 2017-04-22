@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css?family=Coda|Righteous");
+
+ ::selection { background-color: #00a300; color: white; }
+ ::-moz-selection { background-color: #00a300; color: white; }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:"Coda" 
+}
+
+a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a#footer{
+	color: #00A300;
+}
+
+a#footer:hover{
+	text-decoration: underline;
+}
+
+a#footer:visited{
+	color: #a9a9a9;
+}
+
+div#header{
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    background-color: #000;
+    margin: 0 auto;
+}
+
+.department{
+    width: 800px;
+    color: #00a300;
+    padding-top: 40px;
+    font-family: "Righteous";
+    font-size: 20px;
+}
+
+.logo{
+    float: left;
+    margin-left: 10px;
+    margin-top: 4px;
+}
+
+div#container{
+    padding-top: 80px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.sidebar{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background-color: #222;
+    float: left;
+}
+
+ul#nav{
+
+}
+
+ul#nav li{
+    list-style: none;
+}
+
+ul#nav li a{
+    color: #00a300;
+    display: block;
+    padding: 15px;
+    font-size: 1.0em;
+    border-bottom: 1px solid #333;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition:0.2s;
+    transition: 0.2s;
+}
+
+ul#nav li a:hover{
+    background-color: #00a300;
+    color: #fff;
+    padding-left: 30px;
+}
+
+ul#nav li a#selected{
+    background-color: #00a300;
+    color: #fff;
+}
+
+/* for sub menu */
+#nav:hover #sub_nav {
+    display: block;
+    max-height: 200px;
+}
+#sub_nav {
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: all 0.5s ease-out;
+}
+
+
+
+.content{
+    width: auto;
+    margin-left: 300px;
+    height: auto;
+    background-color: #fff;
+    padding: 15px;
+}
+
+.content p{
+    color: #424242;
+    font-size: 0.8em; 
+}
+
+div#box{
+    margin-top: 25px;
+
+}
+
+div#box .box-top{
+    color: #fff;
+    text-shadow: 0px 1px #000;
+    background-color: #00a300;
+    padding: 5px;
+    padding-left: 15px;
+    font-weight: 300;
+}
+
+div#box .box-panel{
+    border: 2px solid #00a300;
+    padding: 15px;
+    color: #333; 
+}
+
+div#box .last{
+    width: 33.33%;
+    height: 100px;
+    background-color: #ee1111;
+    float: left;
+    padding-top: 15px;
+    text-align: center;
+    color: #fff;
+}
+
+div#box .present{
+    width: 33.33%;
+    height: 100px;
+    background-color: #ffc40d;
+    float: left;
+    padding-top: 15px;
+    text-align: center;
+    color: #fff;
+}
+
+div#box .predict{
+    width: 33.33%;
+    height: 100px;
+    background-color: #006fff;
+    margin-left: 66.66%;
+    padding-top: 15px;
+    text-align: center;
+    color: #fff;
+}
+
+td{
+    padding: 6px;
+}
+/*css for the form labels*/
+select,
+textarea,
+input[type="text"],
+input[type="date"]
+{
+    width:350px;;
+    height: 34px;
+    padding: 0 10px;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-family: "Coda";
+    line-height: 20px;
+    border: 2px solid #f0f0f0;
+    background-color: #fff;
+    color: #333;
+    border-radius: 2px;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="date"]
+{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -webkit-transition: background-color 0.2s, border-color 0.2s;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+select:hover,
+textarea:hover,
+input[type="text"]:hover,
+input[type="date"]:hover
+{
+    border-color: #00a300;
+}
+
+select:focus,
+textarea:focus,
+input[type="text"]:focus,
+input[type="date"]:focus
+{
+    border: 2px solid;
+    border-color: #1e5f99;
+    color: #000;
+}
+
+/*create  budget button*/
+.button{
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #222;
+    border: none;
+    text-align: center;
+    color: #fff;
+    font-family: "Coda";
+    font-size: 15px;
+    padding: 15px;
+    width: 165px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button span{
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.button span:after{
+    content: '\00bb';
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s
+}
+
+.button:hover{
+    background-color: #00a300;
+}
+
+.button:hover span{
+    padding-right: 25px;
+}
+
+.button:hover span:after{
+    opacity: 1;
+    right: 0;
+}
+
+/* table Button */
+#table_button_delete, #table_button_update{
+    width: 110px;
+}
+
+#table_button_delete span:after{
+    content: '\00d7';
+}
+
+#table_button_delete:hover{
+    background-color: #dd3615;
+}
+
+#table_button_update:hover{
+    background-color: #3534dd;
+}
+/* alert message box css */
+
+.alert {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 4px 20px 4px 20px;
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    text-shadow: none;
+    position: relative;
+    background-color: #222;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #000;
+    box-shadow: 0 0 0 1px #363d49 inset, 0 5px 10px rgba(0, 0, 0, 0.75);
+}
+.alert-error {
+    color: #f00;
+    background-color: #360e10;
+    box-shadow: 0 0 0 1px #551e21 inset, 0 5px 10px rgba(0, 0, 0, 0.75);
+}
+.alert:empty{
+    display: none;
+}
+.alert-success {
+    color: #21ec0c;
+    background-color: #15360e;
+    box-shadow: 0 0 0 1px #2a551e inset, 0 5px 10px rgba(0, 0, 0, 0.75);
+}
+
+/*footer css*/
+footer{
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: 2em;
+    text-align: center;
+    margin-left: 300px;
+    font-size: 0.8em;
+    color: #a9a9a9;
+}
+
+select option{
+	padding-left: 10px;
+}
+
+/*iframe css*/
+
+.siframe{
+    width: 100%;
+    height: 250px;
+    border:none;
+    
+}
+.tdcon{
+    vertical-align:top;
+    background: #222;   
+}

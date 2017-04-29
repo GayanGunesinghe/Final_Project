@@ -18,44 +18,17 @@
       <file leaf-file-name="transaction.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/finance_administration/transaction/transaction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="208" column="99" lean-forward="false" selection-start-line="208" selection-start-column="99" selection-end-line="208" selection-end-column="99" />
+            <state relative-caret-position="892">
+              <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding>
-                <marker date="1493447644342" expanded="true" signature="249:290" ph="SELECT depar... fa_department" />
-                <marker date="1493447644342" expanded="true" signature="603:631" ph="SELECT * FRO... fa_transaction" />
-                <marker date="1493447644342" expanded="true" signature="715:787" ph="SELECT * FRO... fa_transaction" />
-                <marker date="1493447644342" expanded="true" signature="872:900" ph="SELECT * FRO... fa_transaction" />
-                <marker date="1493447644342" expanded="true" signature="1952:2291" ph="INSERT INTO fa_transaction... " />
-                <marker date="1493447644342" expanded="true" signature="2929:2984" ph="DELETE FROM " />
-                <marker date="1493447644342" expanded="true" signature="4225:4580" ph="UPDATE fa_tr... " />
-                <marker date="1493447644342" expanded="true" signature="7353:7410" ph="SELECT * FRO... fa_transaction" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sub_budget.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/finance_administration/budgetting/sub_budget/sub_budget.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="209" column="103" lean-forward="false" selection-start-line="209" selection-start-column="103" selection-end-line="209" selection-end-column="103" />
-              <folding>
-                <marker date="1493447622386" expanded="true" signature="249:290" ph="SELECT depar... fa_department" />
-                <marker date="1493447622386" expanded="true" signature="598:625" ph="SELECT * FRO... fa_sub_budget" />
-                <marker date="1493447622386" expanded="true" signature="709:778" ph="SELECT * FRO... fa_sub_budget" />
-                <marker date="1493447622386" expanded="true" signature="863:890" ph="SELECT * FRO... fa_sub_budget" />
-                <marker date="1493447622386" expanded="true" signature="1786:1872" ph="SELECT budge... fa_budget" />
-                <marker date="1493447622386" expanded="true" signature="2231:2329" ph="UPDATE fa_bu... " />
-                <marker date="1493447622386" expanded="true" signature="2388:2592" ph="INSERT INTO fa_sub_budget... " />
-                <marker date="1493447622386" expanded="true" signature="3657:3738" ph="SELECT sub_b... fa_sub_budget" />
-                <marker date="1493447622386" expanded="true" signature="3931:4006" ph="SELECT budge... fa_budget" />
-                <marker date="1493447622386" expanded="true" signature="4333:4420" ph="UPDATE fa_bu... " />
-                <marker date="1493447622386" expanded="true" signature="4482:4535" ph="DELETE FROM " />
-                <marker date="1493447622386" expanded="true" signature="5817:5903" ph="SELECT budge... fa_budget" />
-                <marker date="1493447622386" expanded="true" signature="6044:6114" ph="SELECT sub_b... fa_sub_budget" />
-                <marker date="1493447622386" expanded="true" signature="6544:6642" ph="UPDATE fa_bu... " />
-                <marker date="1493447622386" expanded="true" signature="6704:6926" ph="UPDATE fa_su... " />
-                <marker date="1493447622386" expanded="true" signature="9733:9788" ph="SELECT * FRO... fa_sub_budget" />
+                <marker date="1493453204137" expanded="true" signature="257:298" ph="SELECT depar... fa_department" />
+                <marker date="1493453204137" expanded="true" signature="611:639" ph="SELECT * FRO... fa_transaction" />
+                <marker date="1493453204137" expanded="true" signature="723:795" ph="SELECT * FRO... fa_transaction" />
+                <marker date="1493453204137" expanded="true" signature="1700:2039" ph="INSERT INTO fa_transaction... " />
+                <marker date="1493453204137" expanded="true" signature="2399:2427" ph="SELECT * FRO... fa_transaction" />
+                <marker date="1493453204137" expanded="true" signature="2870:2925" ph="DELETE FROM " />
+                <marker date="1493453204137" expanded="true" signature="4166:4521" ph="UPDATE fa_tr... " />
+                <marker date="1493453204137" expanded="true" signature="7294:7351" ph="SELECT * FRO... fa_transaction" />
               </folding>
             </state>
           </provider>
@@ -75,6 +48,9 @@
         <option value="$PROJECT_DIR$/finance_administration/dashboard/dashboard.php" />
         <option value="$PROJECT_DIR$/finance_administration/account/database.php" />
         <option value="$PROJECT_DIR$/finance_administration/budgetting/sub_budget/sub_budget.php" />
+        <option value="$PROJECT_DIR$/sample.php" />
+        <option value="$PROJECT_DIR$/finance_administration/.htaccess" />
+        <option value="$PROJECT_DIR$/finance_administration/transaction/.htaccess" />
         <option value="$PROJECT_DIR$/finance_administration/transaction/transaction.php" />
       </list>
     </option>
@@ -167,6 +143,24 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="fpdf" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Final_Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Final_Project" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="finance_administration" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="budgetting" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -202,7 +196,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js.eslint.eslintPackage" value="" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\XAMPP\htdocs\Final_Project\finance_administration\transaction" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.sample.php">
+    <configuration default="false" name="sample.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Final_Project/sample.php">
+      <method />
+    </configuration>
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
       <config-file value="" />
       <node-interpreter value="project" />
@@ -259,6 +261,14 @@
       <recursive>false</recursive>
       <method />
     </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.sample.php" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.sample.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -274,12 +284,12 @@
       <workItem from="1492833620291" duration="1010000" />
       <workItem from="1493013411382" duration="1660000" />
       <workItem from="1493439998969" duration="1359000" />
-      <workItem from="1493443134760" duration="4102000" />
+      <workItem from="1493443134760" duration="8273000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42234000" />
+    <option name="totallyTimeSpent" value="46405000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1932" height="1050" extended-state="0" />
@@ -290,18 +300,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32858709" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,6 +369,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="49" lean-forward="false" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -478,6 +489,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="53" lean-forward="false" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -493,6 +505,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="49" lean-forward="false" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -585,6 +598,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
           <caret line="80" column="226" lean-forward="false" selection-start-line="80" selection-start-column="226" selection-end-line="80" selection-end-column="226" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -640,8 +654,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/finance_administration/budgetting/sub_budget/sub_budget.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="209" column="103" lean-forward="false" selection-start-line="209" selection-start-column="103" selection-end-line="209" selection-end-column="103" />
+        <state relative-caret-position="308">
+          <caret line="197" column="31" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="279" selection-end-column="11" />
           <folding>
             <marker date="1493447622386" expanded="true" signature="249:290" ph="SELECT depar... fa_department" />
             <marker date="1493447622386" expanded="true" signature="598:625" ph="SELECT * FRO... fa_sub_budget" />
@@ -663,19 +677,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sample.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="804">
+          <caret line="279" column="7" lean-forward="false" selection-start-line="279" selection-start-column="7" selection-end-line="279" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance_administration/transaction/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finance_administration/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/finance_administration/transaction/transaction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="208" column="99" lean-forward="false" selection-start-line="208" selection-start-column="99" selection-end-line="208" selection-end-column="99" />
+        <state relative-caret-position="892">
+          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding>
-            <marker date="1493447644342" expanded="true" signature="249:290" ph="SELECT depar... fa_department" />
-            <marker date="1493447644342" expanded="true" signature="603:631" ph="SELECT * FRO... fa_transaction" />
-            <marker date="1493447644342" expanded="true" signature="715:787" ph="SELECT * FRO... fa_transaction" />
-            <marker date="1493447644342" expanded="true" signature="872:900" ph="SELECT * FRO... fa_transaction" />
-            <marker date="1493447644342" expanded="true" signature="1952:2291" ph="INSERT INTO fa_transaction... " />
-            <marker date="1493447644342" expanded="true" signature="2929:2984" ph="DELETE FROM " />
-            <marker date="1493447644342" expanded="true" signature="4225:4580" ph="UPDATE fa_tr... " />
-            <marker date="1493447644342" expanded="true" signature="7353:7410" ph="SELECT * FRO... fa_transaction" />
+            <marker date="1493453204137" expanded="true" signature="257:298" ph="SELECT depar... fa_department" />
+            <marker date="1493453204137" expanded="true" signature="611:639" ph="SELECT * FRO... fa_transaction" />
+            <marker date="1493453204137" expanded="true" signature="723:795" ph="SELECT * FRO... fa_transaction" />
+            <marker date="1493453204137" expanded="true" signature="1700:2039" ph="INSERT INTO fa_transaction... " />
+            <marker date="1493453204137" expanded="true" signature="2399:2427" ph="SELECT * FRO... fa_transaction" />
+            <marker date="1493453204137" expanded="true" signature="2870:2925" ph="DELETE FROM " />
+            <marker date="1493453204137" expanded="true" signature="4166:4521" ph="UPDATE fa_tr... " />
+            <marker date="1493453204137" expanded="true" signature="7294:7351" ph="SELECT * FRO... fa_transaction" />
           </folding>
         </state>
       </provider>

@@ -1,5 +1,13 @@
     <?php
         session_start();
+
+
+
+
+
+
+
+
         $i=0;
         $_SESSION['message_create']='';
         $_SESSION['message_search']='';
@@ -15,6 +23,33 @@
                 $result = mysqli_query($conn, "SELECT * FROM fa_transaction WHERE transaction_id ='$transaction_search'");
             }
         }
+
+        else if(isset($_POST["create_transaction"])){
+            $transaction_date = $_POST['transaction_date'];
+            $transaction_description = $_POST['transaction_description'];
+            $transaction_type = $_POST['transaction_type'];
+            $transaction_department = $_POST['t_department'];
+            $transaction_account_id = $_POST['t_account_id'];
+            $transaction_payee = $_POST['payee'];
+            $transaction_amount = $_POST['amount'];
+            if(is_numeric($transaction_amount) === false) {
+                $_SESSION['message_create'] = "ERROR: Amount should be Numeric";
+            }
+            else if(ctype_alpha(str_replace(' ','',$transaction_payee)) ==false){
+                $_SESSION['message_create'] = "ERROR: Payee should only contain Letters";
+            }
+            else{
+                $save=mysqli_query($conn,("INSERT INTO fa_transaction (transaction_date,transaction_description,transaction_type,transaction_department,transaction_account_id,transaction_payee,transaction_amount) VALUES('$transaction_date','$transaction_description','$transaction_type','$transaction_department','$transaction_account_id','$transaction_payee','$transaction_amount')"));
+                if ($save) {
+                    $_SESSION['message_create'] = "Created";
+                    header("location:transaction.php");
+                } else {
+                    $_SESSION['message_create'] = 'Error :' . mysqli_error($conn);
+                }
+            }
+        }
+
+
         else{
             $result = mysqli_query($conn, "SELECT * FROM fa_transaction");
         }
@@ -24,30 +59,6 @@
         if(isset($_GET['epr'])) {
             $epr = $_GET['epr'];
 
-            if($epr == 'save'){
-                $transaction_date = $_POST['transaction_date'];
-                $transaction_description = $_POST['transaction_description'];
-                $transaction_type = $_POST['transaction_type'];
-                $transaction_department = $_POST['t_department'];
-                $transaction_account_id = $_POST['t_account_id'];
-                $transaction_payee = $_POST['payee'];
-                $transaction_amount = $_POST['amount'];
-                if(is_numeric($transaction_amount) === false) {
-                    $_SESSION['message_create'] = "ERROR: Amount should be Numeric";
-                }
-                else if(ctype_alpha(str_replace(' ','',$transaction_payee)) ==false){
-                    $_SESSION['message_create'] = "ERROR: Payee should only contain Letters";
-                }
-                else{
-                    $save=mysqli_query($conn,("INSERT INTO fa_transaction (transaction_date,transaction_description,transaction_type,transaction_department,transaction_account_id,transaction_payee,transaction_amount) VALUES('$transaction_date','$transaction_description','$transaction_type','$transaction_department','$transaction_account_id','$transaction_payee','$transaction_amount')"));
-                    if ($save) {
-                        $_SESSION['message_create'] = "Created";
-                        header("location:transaction.php");
-                    } else {
-                        $_SESSION['message_create'] = 'Error :' . mysqli_error($conn);
-                    }
-                }
-            }
             if ($epr == 'delete') {
                 $id = $_GET['id'];
                 if(is_numeric($id) === false) {
@@ -227,6 +238,7 @@
                                         <td></td>
                                         <td>
                                             <button type="submit" name="create_transaction" class="button" style="vertical-align: middle"><span>Create</span></button>
+                                            <button type="submit" name="print_transaction" class="button" style="vertical-align: middle"><span>Print</span></button>
                                             <button type="reset" class="button" style="vertical-align: middle"><span>Reset</span></button>
                                         </td>
                                     </tr>

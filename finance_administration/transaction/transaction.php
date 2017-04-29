@@ -4,6 +4,7 @@
         $_SESSION['message_create']='';
         $_SESSION['message_search']='';
         $conn = new mysqli('localhost', 'root', 'toor', 'final_project');
+        $dropdown_dept = mysqli_query($conn, "SELECT department_name FROM fa_department");
         if(isset($_POST['search_transaction'])){
             $transaction_search = $_POST['transaction_search'];
             if(is_numeric($transaction_search) === false) {
@@ -155,6 +156,7 @@
                                             <select name="t_department" required>
                                                 <option value="<?php echo $st_row['transaction_department'] ?>"><?php echo $st_row['transaction_department'] ?></option>
                                                 <?php
+                                                    while ($row = mysqli_fetch_array($dropdown_dept)) {
                                                         echo "<option value='" . $row['department_name'] ."'>" . $row['department_name'] ."</option>";
                                                     }
                                                 ?>
@@ -204,6 +206,7 @@
                                             <select name="t_department" required>
                                                 <option disabled selected value class="disabled">--Select an Option--</option>
                                                 <?php
+                                                    while ($row = mysqli_fetch_array($dropdown_dept)) {
                                                         echo "<option value='" . $row['department_name'] ."'>" . $row['department_name'] ."</option>";
                                                     }
                                                 ?>

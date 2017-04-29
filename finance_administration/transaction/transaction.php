@@ -154,9 +154,10 @@
                                         <td>
                                             <select name="t_department" required>
                                                 <option value="<?php echo $st_row['transaction_department'] ?>"><?php echo $st_row['transaction_department'] ?></option>
-                                                <option value="HR Management">HR Management</option>
-                                                <option value="Sales">Sales</option>
-                                                <option value="Transportation And Shipping">Transportation And Shipping</option>
+                                                <?php
+                                                        echo "<option value='" . $row['department_name'] ."'>" . $row['department_name'] ."</option>";
+                                                    }
+                                                ?>
                                             </select>
                                         </td>
                                         <td>Account ID</td>
@@ -202,9 +203,10 @@
                                         <td>
                                             <select name="t_department" required>
                                                 <option disabled selected value class="disabled">--Select an Option--</option>
-                                                <option value="HR Management">HR Management</option>
-                                                <option value="Sales">Sales</option>
-                                                <option value="Transportation And Shipping">Transportation And Shipping</option>
+                                                <?php
+                                                        echo "<option value='" . $row['department_name'] ."'>" . $row['department_name'] ."</option>";
+                                                    }
+                                                ?>
                                             </select>
                                         </td>
                                     </tr>

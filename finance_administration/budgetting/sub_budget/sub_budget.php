@@ -4,6 +4,7 @@
         $_SESSION['message_search']='';
         $_SESSION['message_create']='';
         $conn = new mysqli('localhost', 'root', 'toor', 'final_project');
+        $dropdown_dept = mysqli_query($conn, "SELECT department_name FROM fa_department");
         if(isset($_POST['search_sub_budget'])){
             $sub_budget_search = $_POST['sub_budget_search'];
             if(is_numeric($sub_budget_search) === false) {
@@ -170,9 +171,11 @@
                                             <td>
                                                 <select name="sub_budget_department">
                                                     <option value="<?php echo $st_row['sub_budget_department'] ?>"><?php echo $st_row['sub_budget_department'] ?></option>
-                                                    <option value="HR Management">HR Management</option>
-                                                    <option value="Sales">Sales</option>
-                                                    <option value="Transportation and Shipping">Transportation and Shipping</option>
+                                                    <?php
+                                                        while ($row = mysqli_fetch_array($dropdown_dept)) {
+                                                            echo "<option value='" . $row['department_name'] ."'>" . $row['department_name'] ."</option>";
+                                                        }
+                                                    ?>
                                                 </select>
                                             </td>
                                             <td>Amount</td>
@@ -203,9 +206,11 @@
                                             <td>
                                                 <select name="sub_budget_department">
                                                     <option disabled selected value class="disabled">--Select an Option--</option>
-                                                    <option value="HR Management">HR Management</option>
-                                                    <option value="Sales">Sales</option>
-                                                    <option value="Transportation and Shipping">Transportation and Shipping</option>
+                                                    <?php
+                                                        while ($row = mysqli_fetch_array($dropdown_dept)) {
+                                                            echo "<option value='" . $row['department_name'] ."'>" . $row['department_name'] ."</option>";
+                                                        }
+                                                    ?>
                                                 </select>
                                             </td>
                                         </tr>

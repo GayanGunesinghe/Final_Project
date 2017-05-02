@@ -34,6 +34,9 @@
                 else if(is_numeric($amount) === false) {
                     $_SESSION['message_create'] = "ERROR: Amount should be Numeric";
                 }
+                else if($end_date<$start_date){
+                    $_SESSION['message_create'] = "ERROR: Check start and end dates";
+                }
                 else {
                     $save = mysqli_query($conn, ("INSERT INTO fa_budget (account_id,budget_start_date,budget_end_date,budget_amount, budget_amount_remaining) VALUES('$account_id','$start_date','$end_date','$amount','$amount')"));
                     if ($save) {
@@ -69,6 +72,9 @@
                 }
                 else if(is_numeric($amount) === false) {
                     $_SESSION['message_create'] = "ERROR: Amount should be Numeric";
+                }
+                else if($end_date<$start_date){
+                    $_SESSION['message_create'] = "ERROR: Check start and end dates";
                 }
                 else {
                     $query=mysqli_fetch_array(mysqli_query($conn, ("SELECT budget_amount_remaining, budget_amount FROM fa_budget WHERE budget_id ='$id'")));

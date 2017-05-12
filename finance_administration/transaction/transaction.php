@@ -31,57 +31,6 @@
             }
         }
 
-        else if(isset($_POST["print_transaction"])){
-            $transaction_search = $_POST['transaction_search'];
-            $report = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM fa_transaction WHERE transaction_id ='$transaction_search'"));
-            $date = $report['transaction_date'];
-            $description = $report['transaction_description'];
-
-            require("D:/XAMPP/htdocs/Final_Project/finance_administration/fpdf/fpdf.php");
-
-            class PDF extends FPDF{
-                function Header()
-                {
-                    parent::Header();
-                    // Logo
-                    $this->Image('title.png',10,6,30);
-                    // Arial bold 15
-                    $this->SetFont('Arial','B',15);
-                    // Move to the right
-                    $this->Cell(80);
-                    // Title
-                    $this->Cell(30,10,'Transaction Report',1,0,'C');
-                    // Line break
-                    $this->Ln(20);
-                }
-
-                // Page footer
-                function Footer()
-                {
-                    // Position at 1.5 cm from bottom
-                    $this->SetY(-15);
-                    // Arial italic 8
-                    $this->SetFont('Arial','I',8);
-                    // Page number
-                    $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
-                }
-            }
-
-            $pdf = new FPDF();
-            $pdf->AliasNbPages();
-            $pdf -> AddPage();
-            $pdf -> SetFont("Times","B",12);
-            $pdf -> Cell(0,10,"Transaction ID ".$transaction_search,1,1,"L");
-            $pdf -> SetFont("Times","",10);
-            $pdf -> Cell(40,10,"Transaction Date: ",1,0,"");
-            $pdf -> Cell(50,10,$date,1,0,"C");
-            $pdf -> Cell(50,10,"Transaction Description: ",1,0,"");
-            $pdf -> Cell(50,10,$description,1,1,"C");
-            for($i=1;$i<=40;$i++)
-                $pdf->Cell(0,10,'Printing line number '.$i,0,1);
-            $pdf -> Output();
-        }
-
         else if(isset($_POST['search_transaction'])){
             $transaction_search = $_POST['transaction_search'];
             if(is_numeric($transaction_search) === false) {

@@ -32,13 +32,25 @@
         }
 
         else if(isset($_POST['search_transaction'])){
+            $search_category = $_POST['search_category'];
             $transaction_search = $_POST['transaction_search'];
-            if(is_numeric($transaction_search) === false) {
-                $_SESSION['message_search'] = "ERROR: Transaction ID should be Numeric";
-                $result = mysqli_query($conn, "SELECT * FROM fa_transaction");
+            if($search_category == 'Transaction ID'){
+                $result = mysqli_query($conn, "SELECT * FROM fa_transaction WHERE transaction_id = '$transaction_search'");
             }
-            else {
-                $result = mysqli_query($conn, "SELECT * FROM fa_transaction WHERE transaction_id ='$transaction_search'");
+            else if($search_category == 'Transaction Date'){
+                $result = mysqli_query($conn, "SELECT * FROM fa_transaction WHERE transaction_date ='$transaction_search'");
+            }
+            else if($search_category == 'Type'){
+                $result = mysqli_query($conn, "SELECT * FROM fa_transaction WHERE transaction_type LIKE '%$transaction_search%'");
+            }
+            else if($search_category == 'Department'){
+                $result = mysqli_query($conn, "SELECT * FROM fa_transaction WHERE transaction_department LIKE '%$transaction_search%'");
+            }
+            else if($search_category == 'Account ID'){
+                $result = mysqli_query($conn, "SELECT * FROM fa_transaction WHERE transaction_account_id LIKE '$transaction_search'");
+            }
+            else if($search_category == 'Payee'){
+                $result = mysqli_query($conn, "SELECT * FROM fa_transaction WHERE transaction_payee LIKE '%$transaction_search%'");
             }
         }
         else{
@@ -271,10 +283,20 @@
                         <?php echo "<small>Records found in database ( ".$i." )</small>"; ?>
                         <br><br>
                         <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" name="search_account" enctype="multipart/form-data" autocomplete="off">
-                            *Search Transaction Entries using Transaction ID
+                            *Search Transaction Entries using preferred Criteria
                             <div class="alert"><?php echo $_SESSION['message_search'];?></div>
                             <table>
-                                <td>Transaction ID</td>
+                                <td>
+                                    <select name="search_category" required>
+                                        <option disabled selected value class="disabled">--Select a Criteria--</option>
+                                        <option value="Transaction ID">Transaction ID</option>
+                                        <option value="Transaction Date">Transaction Date</option>
+                                        <option value="Type">Type</option>
+                                        <option value="Department">Department</option>
+                                        <option value="Account ID">Account ID</option>
+                                        <option value="Payee">Payee</option>
+                                    </select>
+                                </td>
                                 <td><input type="text" placeholder="Transaction ID" name="transaction_search" required /></td>
                                 <td><button type="submit" name="search_transaction" class="button" style="vertical-align: middle"><span>Search</span></button></td>
                                 <td><button type="submit" name="print_transaction" class="button" style="vertical-align: middle"><span>Print</span></button></td>

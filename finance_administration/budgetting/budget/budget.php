@@ -4,7 +4,31 @@
         $_SESSION['message_search']='';
         $_SESSION['message_create']='';
         $conn = new mysqli('localhost', 'root', 'toor', 'final_project');
-        if(isset($_POST['search_budget'])){
+        if(isset($_POST['create_budget'])){
+            $account_id = $_POST['account_id'];
+            $start_date = $_POST['start_date'];
+            $end_date = $_POST['end_date'];
+            $amount = $_POST['amount'];
+            if(is_numeric($account_id) === false) {
+                $_SESSION['message_create'] = "ERROR: Account ID should be Numeric";
+            }
+            else if(is_numeric($amount) === false) {
+                $_SESSION['message_create'] = "ERROR: Amount should be Numeric";
+            }
+            else if($end_date<$start_date){
+                $_SESSION['message_create'] = "ERROR: Check start and end dates";
+            }
+            else {
+                $save = mysqli_query($conn, ("INSERT INTO fa_budget (account_id,budget_start_date,budget_end_date,budget_amount, budget_amount_remaining) VALUES('$account_id','$start_date','$end_date','$amount','$amount')"));
+                if ($save) {
+                    $_SESSION['message_create'] = "Created";
+                    header("location:budget.php");
+                } else {
+                    $_SESSION['message_create_button'] = 'Error :' . mysqli_error($conn);
+                }
+            }
+        }
+        else if(isset($_POST['search_budget'])){
             $budget_search = $_POST['budget_search'];
             if(is_numeric($budget_search) === false) {
                 $_SESSION['message_search'] = "ERROR: Budget ID should be Numeric";
@@ -23,30 +47,6 @@
         if(isset($_GET['epr'])) {
             $epr = $_GET['epr'];
 
-            if($epr == 'save'){
-                $account_id = $_POST['account_id'];
-                $start_date = $_POST['start_date'];
-                $end_date = $_POST['end_date'];
-                $amount = $_POST['amount'];
-                if(is_numeric($account_id) === false) {
-                    $_SESSION['message_create'] = "ERROR: Account ID should be Numeric";
-                }
-                else if(is_numeric($amount) === false) {
-                    $_SESSION['message_create'] = "ERROR: Amount should be Numeric";
-                }
-                else if($end_date<$start_date){
-                    $_SESSION['message_create'] = "ERROR: Check start and end dates";
-                }
-                else {
-                    $save = mysqli_query($conn, ("INSERT INTO fa_budget (account_id,budget_start_date,budget_end_date,budget_amount, budget_amount_remaining) VALUES('$account_id','$start_date','$end_date','$amount','$amount')"));
-                    if ($save) {
-                        $_SESSION['message_create'] = "Created";
-                        header("location:budget.php");
-                    } else {
-                        $_SESSION['message_create_button'] = 'Error :' . mysqli_error($conn);
-                    }
-                }
-            }
             if ($epr == 'delete') {
                 $id = $_GET['id'];
                 $delete = mysqli_query($conn, ("DELETE FROM fa_budget WHERE budget_id = '$id'"));
@@ -182,7 +182,7 @@
                                         <tr>
                                             <td></td>
                                             <td>
-                                                <button type="submit" name="create_account" class="button" style="vertical-align: middle"><span>Create</span></button>
+                                                <button type="submit" name="create_budget" class="button" style="vertical-align: middle"><span>Create</span></button>
                                                 <button type="reset" class="button" style="vertical-align: middle"><span>Reset</span></button>
                                             </td>
                                         </tr>

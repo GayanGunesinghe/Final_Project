@@ -4,7 +4,33 @@
         $_SESSION['message_create']='';
         $_SESSION['message_search']='';
         $conn = new mysqli('localhost', 'root', 'toor', 'final_project');
-        if(isset($_POST['search_account'])){
+        if(isset($_POST['create_account'])){
+            $account_no = $_POST['account_number'];
+            $account_name = $_POST['account_name'];
+            $account_type = $_POST['account_type'];
+            $balance = $_POST['balance'];
+            $reference = $_POST['reference'];
+            $description = $_POST['description'];
+            if(is_numeric($account_no) === false) {
+                $_SESSION['message_create'] = "ERROR: Account Number should be Numeric";
+            }
+            else if(is_numeric($balance) === false) {
+                $_SESSION['message_create'] = "ERROR: Balance should be Numeric";
+            }
+            else if(ctype_alpha(str_replace(' ','',$account_name)) ==false){
+                $_SESSION['message_create'] = "ERROR: Account Name should only contain Letters";
+            }
+            else {
+                $save = mysqli_query($conn, ("INSERT INTO fa_accounts (account_no,account_name,account_type,balance,reference,description) VALUES('$account_no','$account_name','$account_type','$balance','$reference','$description')"));
+                if ($save) {
+                    $_SESSION['message_create'] = 'New Account Created';
+                    header("location:account.php");
+                } else {
+                    $_SESSION['message_create'] = 'Error :' . mysqli_error($conn);
+                }
+            }
+        }
+        else if(isset($_POST['search_account'])){
             $account_search = $_POST['account_search'];
             if(is_numeric($account_search) === false) {
                 $_SESSION['message_search'] = "ERROR: Account ID should be Numeric";
@@ -23,32 +49,6 @@
         if(isset($_GET['epr'])) {
             $epr = $_GET['epr'];
 
-            if($epr == 'save'){
-                $account_no = $_POST['account_number'];
-                $account_name = $_POST['account_name'];
-                $account_type = $_POST['account_type'];
-                $balance = $_POST['balance'];
-                $reference = $_POST['reference'];
-                $description = $_POST['description'];
-                if(is_numeric($account_no) === false) {
-                    $_SESSION['message_create'] = "ERROR: Account Number should be Numeric";
-                }
-                else if(is_numeric($balance) === false) {
-                    $_SESSION['message_create'] = "ERROR: Balance should be Numeric";
-                }
-                else if(ctype_alpha(str_replace(' ','',$account_name)) ==false){
-                    $_SESSION['message_create'] = "ERROR: Account Name should only contain Letters";
-                }
-                else {
-                    $save = mysqli_query($conn, ("INSERT INTO fa_accounts (account_no,account_name,account_type,balance,reference,description) VALUES('$account_no','$account_name','$account_type','$balance','$reference','$description')"));
-                    if ($save) {
-                        $_SESSION['message_create'] = 'New Account Created';
-                        header("location:account.php");
-                    } else {
-                        $_SESSION['message_create'] = 'Error :' . mysqli_error($conn);
-                    }
-                }
-            }
             if ($epr == 'delete') {
                 $id = $_GET['id'];
                 if(is_numeric($id) === false) {

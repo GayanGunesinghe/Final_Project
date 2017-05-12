@@ -5,13 +5,43 @@
         $_SESSION['message_create']='';
         $conn = new mysqli('localhost', 'root', 'toor', 'final_project');
         $dropdown_dept = mysqli_query($conn, "SELECT department_name FROM fa_department");
-        if(isset($_POST['search_sub_budget'])){
-            $sub_budget_search = $_POST['sub_budget_search'];
-            if(is_numeric($sub_budget_search) === false) {
-                $_SESSION['message_search'] = "ERROR: Sub Budget ID should be Numeric";
-                $result = mysqli_query($conn, "SELECT * FROM fa_sub_budget");
+        if(isset($_POST['create_sub_budget'])){
+            $sub_budget_budget_id = $_POST['sub_budget_budget_id'];
+            $sub_budget_department = $_POST['sub_budget_department'];
+            $sub_budget_amount = $_POST['sub_budget_amount'];
+            $sub_budget_description = $_POST['sub_budget_description'];
+            if(is_numeric($sub_budget_budget_id) === false) {
+                $_SESSION['message_create'] = "ERROR: Budget ID should be Numeric";
+            }
+            else if(is_numeric($sub_budget_amount) === false) {
+                $_SESSION['message_create'] = "ERROR: Amount should be Numeric";
             }
             else {
+                $query=mysqli_fetch_array(mysqli_query($conn, ("SELECT budget_amount_remaining FROM fa_budget WHERE budget_id ='$sub_budget_budget_id'")));
+                $bud_amt = $query['budget_amount_remaining'];
+                $up_bud_amt=$bud_amt - $sub_budget_amount;
+                if($up_bud_amt<0){
+                    $_SESSION['message_create'] = "ERROR: Exceed Main Budget Amount";
+                }
+                else {
+                    mysqli_query($conn, ("UPDATE fa_budget SET budget_amount_remaining='$up_bud_amt' WHERE budget_id='$sub_budget_budget_id'"));
+                    $save = mysqli_query($conn, ("INSERT INTO fa_sub_budget (budget_id,sub_budget_department,sub_budget_amount,sub_budget_description) VALUES('$sub_budget_budget_id','$sub_budget_department','$sub_budget_amount','$sub_budget_description')"));
+                    if ($save) {
+                        header( "Refresh:3; url=http://localhost/Final_Project/finance_administration/budgetting/sub_budget/sub_budget.php", true, 303);
+                        $_SESSION['message_create'] = "Sub Budget Created..    Rs ".$up_bud_amt." Remaining in Budget ID ( ".$sub_budget_budget_id." )";
+                        echo "<script type='text/javascript'>alert('Sub Budget Created..    Rs '+$up_bud_amt+' Remaining in Budget ID ( '+$sub_budget_budget_id+' )')</script>";
+                    } else {
+                        $_SESSION['message_create'] = 'Error :' . mysqli_error($conn);
+                    }
+                }
+            }
+        }
+        else if(isset($_POST['search_sub_budget'])){
+            $sub_budget_search = $_POST['sub_budget_search'];
+            if(is_numeric($sub_budget_search)=== false){
+                $result = mysqli_query($conn, "SELECT * FROM fa_sub_budget WHERE sub_budget_department LIKE '%$sub_budget_search%'");
+            }
+            else if(is_numeric($sub_budget_search)=== true){
                 $result = mysqli_query($conn, "SELECT * FROM fa_sub_budget WHERE sub_budget_id ='$sub_budget_search'");
             }
         }
@@ -24,37 +54,6 @@
         if(isset($_GET['epr'])) {
             $epr = $_GET['epr'];
 
-            if($epr == 'sub_save'){
-                $sub_budget_budget_id = $_POST['sub_budget_budget_id'];
-                $sub_budget_department = $_POST['sub_budget_department'];
-                $sub_budget_amount = $_POST['sub_budget_amount'];
-                $sub_budget_description = $_POST['sub_budget_description'];
-                if(is_numeric($sub_budget_budget_id) === false) {
-                    $_SESSION['message_create'] = "ERROR: Budget ID should be Numeric";
-                }
-                else if(is_numeric($sub_budget_amount) === false) {
-                    $_SESSION['message_create'] = "ERROR: Amount should be Numeric";
-                }
-                else {
-                    $query=mysqli_fetch_array(mysqli_query($conn, ("SELECT budget_amount_remaining FROM fa_budget WHERE budget_id ='$sub_budget_budget_id'")));
-                    $bud_amt = $query['budget_amount_remaining'];
-                    $up_bud_amt=$bud_amt - $sub_budget_amount;
-                    if($up_bud_amt<0){
-                        $_SESSION['message_create'] = "ERROR: Exceed Main Budget Amount";
-                    }
-                    else {
-                        mysqli_query($conn, ("UPDATE fa_budget SET budget_amount_remaining='$up_bud_amt' WHERE budget_id='$sub_budget_budget_id'"));
-                        $save = mysqli_query($conn, ("INSERT INTO fa_sub_budget (budget_id,sub_budget_department,sub_budget_amount,sub_budget_description) VALUES('$sub_budget_budget_id','$sub_budget_department','$sub_budget_amount','$sub_budget_description')"));
-                        if ($save) {
-                            header( "Refresh:3; url=http://localhost/Final_Project/finance_administration/budgetting/sub_budget/sub_budget.php", true, 303);
-                            $_SESSION['message_create'] = "Sub Budget Created..    Rs ".$up_bud_amt." Remaining in Budget ID ( ".$sub_budget_budget_id." )";
-                            echo "<script type='text/javascript'>alert('Sub Budget Created..    Rs '+$up_bud_amt+' Remaining in Budget ID ( '+$sub_budget_budget_id+' )')</script>";
-                        } else {
-                            $_SESSION['message_create'] = 'Error :' . mysqli_error($conn);
-                        }
-                    }
-                }
-            }
             if ($epr == 'sub_delete') {
                 $id = $_GET['id'];
                 if(is_numeric($id) === false) {
@@ -263,8 +262,8 @@
                             *Search Budget Entries using Budget ID
                             <div class="alert"><?php echo $_SESSION['message_search'];?></div>
                             <table>
-                                <td>Sub Budget ID</td>
-                                <td><input type="text" placeholder=" Sub Budget ID" name="sub_budget_search" required /></td>
+                                <td>Search Criteria</td>
+                                <td><input type="text" placeholder=" Search Criteria" name="sub_budget_search" required /></td>
                                 <td><button type="submit" name="search_sub_budget" class="button" style="vertical-align: middle"><span>Search</span></button></td>
                             </table>
                         </form>

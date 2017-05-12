@@ -31,13 +31,19 @@
             }
         }
         else if(isset($_POST['search_account'])){
+            $search_category = $_POST['search_category'];
             $account_search = $_POST['account_search'];
-            if(is_numeric($account_search) === false) {
-                $_SESSION['message_search'] = "ERROR: Account ID should be Numeric";
-                $result = mysqli_query($conn, "SELECT * FROM fa_accounts");
+            if($search_category == 'Account ID'){
+                $result = mysqli_query($conn, "SELECT * FROM fa_accounts WHERE account_id = '$account_search'");
             }
-            else {
-                $result = mysqli_query($conn, "SELECT * FROM fa_accounts WHERE account_id ='$account_search'");
+            else if($search_category == 'Account Name'){
+                $result = mysqli_query($conn, "SELECT * FROM fa_accounts WHERE account_name LIKE '%$account_search%'");
+            }
+            else if($search_category == 'Account Number'){
+                $result = mysqli_query($conn, "SELECT * FROM fa_accounts WHERE account_no ='$account_search'");
+            }
+            else if($search_category == 'Type'){
+                $result = mysqli_query($conn, "SELECT * FROM fa_accounts WHERE account_type LIKE '%$account_search%'");
             }
         }
         else{
@@ -245,10 +251,18 @@
                             <?php echo "<small>Records found in database ( ".$i." )</small>"; ?>
                             <br><br>
                             <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" name="search_account" enctype="multipart/form-data" autocomplete="off" onsubmit="return(validate());">
-                                *Search Account Entries using Account ID
+                                *Search Account Entries using preferred Criteria
                                 <div class="alert"><?php echo $_SESSION['message_search']; ?></div>
                                 <table>
-                                    <td>Account ID</td>
+                                    <td>
+                                        <select name="search_category" required>
+                                            <option disabled selected value class="disabled">--Select a Criteria--</option>
+                                            <option value="Account ID">Account ID</option>
+                                            <option value="Account Number">Account Number</option>
+                                            <option value="Account Name">Account Name</option>
+                                            <option value="Type">Type</option>
+                                        </select>
+                                    </td>
                                     <td><input type="text" placeholder="Account ID" name="account_search"/></td>
                                     <td><button type="submit" name="search_account" class="button" style="vertical-align: middle"><span>Search</span></button></td>
                                 </table>
@@ -256,5 +270,10 @@
                         </div>
                     </div>
                 </div>
+                <footer>
+                    <p>Samtessi Brush Manufacturers (pvt) LTD</p>
+                    <p>Icons from <a id="footer" href="http://www.flaticon.com" rel="nofollow">Flaticon</a>. Web fonts from <a id="footer" href="http://www.google.com/webfonts" rel="nofollow">Google</a></p>
+                </footer>
+            </div>
         </body>
     </html>

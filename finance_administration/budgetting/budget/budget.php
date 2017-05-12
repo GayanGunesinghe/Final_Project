@@ -29,13 +29,16 @@
             }
         }
         else if(isset($_POST['search_budget'])){
+            $search_category = $_POST['search_category'];
             $budget_search = $_POST['budget_search'];
-            if(is_numeric($budget_search) === false) {
-                $_SESSION['message_search'] = "ERROR: Budget ID should be Numeric";
-                $result = mysqli_query($conn, "SELECT * FROM fa_budget");
+            if($search_category == 'Budget ID'){
+                $result = mysqli_query($conn, "SELECT * FROM fa_budget WHERE budget_id = '$budget_search'");
             }
-            else {
-                $result = mysqli_query($conn, "SELECT * FROM fa_budget WHERE budget_id ='$budget_search'");
+            else if($search_category == 'Account ID'){
+                $result = mysqli_query($conn, "SELECT * FROM fa_budget WHERE account_id ='$budget_search'");
+            }
+            else if($search_category == 'Start Date'){
+                $result = mysqli_query($conn, "SELECT * FROM fa_budget WHERE budget_start_date = '$budget_search'");
             }
         }
         else{
@@ -221,10 +224,17 @@
                         <?php echo "<small>Records found in database ( ".$i." )</small>"; ?>
                         <br><br>
                         <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" name="search_account" enctype="multipart/form-data" autocomplete="off">
-                            *Search Budget Entries using Budget ID
+                            *Search Budget Entries using preferred Criteria
                             <div class="alert"><?php echo $_SESSION['message_search'];?></div>
                             <table>
-                                <td>Budget ID</td>
+                                <td>
+                                    <select name="search_category" required>
+                                        <option disabled selected value class="disabled">--Select a Criteria--</option>
+                                        <option value="Budget ID">Budget ID</option>
+                                        <option value="Account ID">Account ID</option>
+                                        <option value="Start Date">Start Date</option>
+                                    </select>
+                                </td>
                                 <td><input type="text" placeholder="Budget ID" name="budget_search" required /></td>
                                 <td><button type="submit" name="search_budget" class="button" style="vertical-align: middle"><span>Search</span></button></td>
                             </table>

@@ -37,12 +37,16 @@
             }
         }
         else if(isset($_POST['search_sub_budget'])){
+            $search_category = $_POST['search_category'];
             $sub_budget_search = $_POST['sub_budget_search'];
-            if(is_numeric($sub_budget_search)=== false){
-                $result = mysqli_query($conn, "SELECT * FROM fa_sub_budget WHERE sub_budget_department LIKE '%$sub_budget_search%'");
+            if($search_category == 'Sub Budget ID'){
+                $result = mysqli_query($conn, "SELECT * FROM fa_sub_budget WHERE sub_budget_id = '$sub_budget_search'");
             }
-            else if(is_numeric($sub_budget_search)=== true){
-                $result = mysqli_query($conn, "SELECT * FROM fa_sub_budget WHERE sub_budget_id ='$sub_budget_search'");
+            else if($search_category == 'Budget ID'){
+                $result = mysqli_query($conn, "SELECT * FROM fa_sub_budget WHERE budget_id ='$sub_budget_search'");
+            }
+            else if($search_category == 'Department'){
+                $result = mysqli_query($conn, "SELECT * FROM fa_sub_budget WHERE sub_budget_department LIKE '%$sub_budget_search%'");
             }
         }
         else{
@@ -259,11 +263,18 @@
                         <?php echo "<small>Records found in database ( ".$i." )</small>"; ?>
                         <br><br>
                         <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" name="search_account" enctype="multipart/form-data" autocomplete="off">
-                            *Search Budget Entries using Budget ID
+                            *Search Sub Budget Entries using preferred Criteria
                             <div class="alert"><?php echo $_SESSION['message_search'];?></div>
                             <table>
-                                <td>Search Criteria</td>
-                                <td><input type="text" placeholder=" Search Criteria" name="sub_budget_search" required /></td>
+                                <td>
+                                    <select name="search_category" required>
+                                        <option disabled selected value class="disabled">--Select a Criteria--</option>
+                                        <option value="Sub Budget ID">Sub Budget ID</option>
+                                        <option value="Budget ID">Budget ID</option>
+                                        <option value="Department">Department</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" placeholder=" Value" name="sub_budget_search" required /></td>
                                 <td><button type="submit" name="search_sub_budget" class="button" style="vertical-align: middle"><span>Search</span></button></td>
                             </table>
                         </form>
